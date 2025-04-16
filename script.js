@@ -1,4 +1,18 @@
-function findPrimes(limit) {
+function onCLickButton() {
+  const date = new Date();
+  console.log(
+    `${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}` +
+      ": on default button click"
+  );
+}
+
+function triggerHeavyOperation(resolve = console.log) {
+  let date = new Date();
+  console.log(
+    `${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}: heavy operation start`
+  );
+
+  const limit = 10000000;
   const primes = [];
   for (let num = 2; num <= limit; num++) {
     let isPrime = true;
@@ -10,26 +24,13 @@ function findPrimes(limit) {
     }
     if (isPrime) primes.push(num);
   }
-}
 
-const onCLickButton = () => {
-  const date = new Date();
-  console.log(
-    `${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}` +
-      ": on default button click"
-  );
-};
-
-const triggerHeavyOperation = () => {
-  let date = new Date();
-  console.log(
-    `${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}: heavy operation start`
-  );
-  findPrimes(10_000_000);
+  const res = primes.length;
 
   date = new Date();
-
   console.log(
     `${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()}: heavy operation end`
   );
-};
+
+  resolve(res);
+}
