@@ -15,18 +15,25 @@
     </div>
     <div class="animations">
       <div class="animation-container">
-        <p class="animation-description">transform / opacity animation</p>
+        <p class="animation-description">
+          transform / opacity animation <br />
+          <span class="thread-hint">Compositor Thread</span>
+        </p>
         <div class="pulser"></div>
       </div>
       <div class="animation-container">
-        <p class="animation-description">JS animation</p>
+        <p class="animation-description">
+          JS animation <br />
+          <span class="thread-hint">Main Thread</span>
+        </p>
         <div id="path">
           <div id="brick"></div>
         </div>
       </div>
       <div class="animation-container">
         <p class="animation-description">
-          non-transform / non-opacity animation
+          non-transform / non-opacity animation <br />
+          <span class="thread-hint">Main Thread</span>
         </p>
         <div id="non-compositing">
           <div id="disappear"></div>

@@ -38,8 +38,12 @@ canvas {
 }
 
 .animation-container:hover {
-  background-color: rgb(112, 124, 199);
+  background-color: rgb(95, 110, 206);
   cursor: pointer;
+}
+
+.animation-container:hover .thread-hint {
+  visibility: visible;
 }
 
 .controls {
@@ -130,4 +134,10 @@ canvas {
   color: white;
   padding-bottom: 5px;
   text-align: center;
+}
+
+.thread-hint {
+  color: yellow;
+  font-style: italic;
+  visibility: hidden;
 }
