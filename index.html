@@ -11,10 +11,27 @@
     <div class="controls">
       <button onclick="onCLickButton()">Default click</button>
       <button onclick="triggerHeavyOperation()">Trigger heavy operation</button>
+      <button onclick="fetchData()">Fetch data</button>
     </div>
-    <div class="pulser"></div>
-    <div id="path">
-      <div id="brick"></div>
+    <div class="animations">
+      <div class="animation-container">
+        <p class="animation-description">transform / opacity animation</p>
+        <div class="pulser"></div>
+      </div>
+      <div class="animation-container">
+        <p class="animation-description">JS animation</p>
+        <div id="path">
+          <div id="brick"></div>
+        </div>
+      </div>
+      <div class="animation-container">
+        <p class="animation-description">
+          non-transform / non-opacity animation
+        </p>
+        <div id="non-compositing">
+          <div id="disappear"></div>
+        </div>
+      </div>
     </div>
   </body>
   <script src="./script.js"></script>

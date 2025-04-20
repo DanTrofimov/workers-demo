@@ -1,9 +1,14 @@
+* {
+  font-family: Consolas, monaco, monospace;
+  font-size: 10px;
+}
+
 body {
   background-color: #303f9f;
   height: 100vh;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 50px;
   justify-content: center;
   align-items: center;
@@ -15,6 +20,25 @@ button {
   background-color: #4caf50;
   border-radius: 10px;
   border: solid white;
+  cursor: pointer;
+}
+
+canvas {
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+.animation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+
+.animation-container:hover {
+  background-color: rgb(112, 124, 199);
   cursor: pointer;
 }
 
@@ -31,6 +55,15 @@ button {
   border-radius: 50%;
   position: relative;
   transition: all 0.35s ease;
+}
+
+.animations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .pulser::after {
@@ -73,4 +106,28 @@ button {
   width: 120px;
   height: 20px;
   border-radius: 5px;
+}
+
+#non-compositing {
+  width: 20px;
+  height: 20px;
+  background: #4caf50;
+  cursor: pointer;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 30px;
+  left: 25px;
+  animation: move 3s ease infinite;
+}
+
+@keyframes move {
+  50% {
+    left: 170px;
+  }
+}
+
+.animation-description {
+  color: white;
+  padding-bottom: 5px;
+  text-align: center;
 }

@@ -34,3 +34,56 @@ function triggerHeavyOperation(resolve = console.log) {
 
   resolve(res);
 }
+
+function fetchData() {
+  Promise.all([
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json)),
+    fetch(
+      "https://jsonplaceholder.typicode.com/todos/" +
+        Math.round(100 * Math.random())
+    )
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+  ]);
+}
