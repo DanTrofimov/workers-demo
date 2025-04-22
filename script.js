@@ -1,3 +1,8 @@
+if ("paintWorklet" in CSS) {
+  CSS.paintWorklet.addModule("./worklet.js");
+  CSS.paintWorklet.addModule("./worklet2.js");
+}
+
 function onCLickButton() {
   const date = new Date();
   console.log(
@@ -33,6 +38,14 @@ function triggerHeavyOperation(resolve = console.log) {
   );
 
   resolve(res);
+}
+
+const worker = new Worker("./worker.js");
+
+function triggerHeavyOperationViaWorker() {
+  worker.postMessage("trigger");
+
+  worker.onmessage = (res) => console.log(res.data);
 }
 
 function fetchData() {
