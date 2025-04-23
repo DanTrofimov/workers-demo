@@ -21,16 +21,9 @@ button {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  /* --border-width: 3;
-  --border-radius: 10;
-  --gradient-start: #ffffff;
-  --gradient-end: #00bfff;
-  --cut-size: 100px;
-  background-image: paint(gradient-border);
-  background-repeat: no-repeat;
-  background-size: 100% 100%; */
+  border: solid white;
 
-  --border-width: 2;
+  /* --border-width: 2;
   --border-radius: 12;
   --gradient-start: #fff;
   --gradient-end: #00ffff;
@@ -39,12 +32,7 @@ button {
   background-image: paint(gradient-border);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  mask-image: paint(mask-shape);
-}
-
-canvas {
-  border-radius: 20px;
-  border: 1px solid white;
+  mask-image: paint(mask-shape); */
 }
 
 .animation-container {
@@ -65,6 +53,18 @@ canvas {
   visibility: visible;
 }
 
+.animation-description {
+  color: white;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.thread-hint {
+  color: yellow;
+  font-style: italic;
+  visibility: hidden;
+}
+
 .controls {
   display: flex;
   gap: 15px;
@@ -80,17 +80,17 @@ canvas {
   transition: all 0.35s ease;
 }
 
-.animations {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  padding-bottom: 60px;
-}
-
 .pulser::after {
   animation: pulse 1000ms cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #c5cae9;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 @keyframes pulse {
@@ -103,16 +103,13 @@ canvas {
   }
 }
 
-.pulser::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: #c5cae9;
-  border-radius: 50%;
-  z-index: -1;
+.animations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 #brick {
@@ -147,16 +144,4 @@ canvas {
   50% {
     left: 170px;
   }
-}
-
-.animation-description {
-  color: white;
-  padding-bottom: 5px;
-  text-align: center;
-}
-
-.thread-hint {
-  color: yellow;
-  font-style: italic;
-  visibility: hidden;
 }

@@ -1,4 +1,3 @@
-// mask-shape.js
 registerPaint(
   "mask-shape",
   class {

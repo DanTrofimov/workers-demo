@@ -1,8 +1,7 @@
-if ("paintWorklet" in CSS) {
-  CSS.paintWorklet.addModule("./worklet.js");
-  CSS.paintWorklet.addModule("./worklet2.js");
-}
-
+// if ("paintWorklet" in CSS) {
+//   CSS.paintWorklet.addModule("./worklets/gradient-border-worklet.js");
+//   CSS.paintWorklet.addModule("./worklets/cut-bg-worklet.js");
+// }
 function onCLickButton() {
   const date = new Date();
   console.log(
